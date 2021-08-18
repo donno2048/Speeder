@@ -1,0 +1,1 @@
+document.getElementsByTagName("input")[0].oninput = function() {chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {chrome.tabs.executeScript(tabs[0].id, {code: `[...document.getElementsByTagName("video")].forEach((video)=>{video.playbackRate = ${document.getElementsByTagName("input")[0].value};})`})})}
